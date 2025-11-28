@@ -15,3 +15,4 @@ Bao gồm các phần:
 python -m venv .venv
 source .venv/bin/activate   # hoặc .venv\Scripts\activate với Windows
 pip install -r requirements.txt
+###2. Train model
