@@ -1,105 +1,152 @@
-# CREDIT RISK CLASSIFICATION (GERMAN CREDIT DATA)
+# German Credit Risk Prediction
 
-A machine learning project to predict credit risk ("good" vs "bad") using the German Credit dataset.  
-Includes: EDA, preprocessing, feature engineering, model training, and evaluation.
+This project builds a machine learning model to predict whether a loan applicant is a **good or bad credit risk** using the German Credit dataset.
+
+The goal is to apply a full machine learning workflow including **data preprocessing, feature engineering, model training, and evaluation**.
 
 ---
 
-## 📁 PROJECT STRUCTURE
-project/
+# Dataset
+
+Dataset: German Credit Data
+
+Source:
+https://www.kaggle.com/datasets/uciml/german-credit
+
+The dataset contains financial and personal information about loan applicants.
+
+Examples of features:
+
+* Age
+* Credit amount
+* Duration
+* Employment status
+* Housing
+* Savings account
+
+Target variable:
+
+| Value | Meaning          |
+| ----- | ---------------- |
+| 0     | Good credit risk |
+| 1     | Bad credit risk  |
+
+---
+
+# Project Structure
+
+```
+german-credit-risk/
 │
 ├── data/
-│ └── german_credit_data.csv
-│
-├── notebooks/
-│ └── EDA.ipynb
+│   └── german_credit_data.csv
 │
 ├── src/
-│ ├── preprocess.py
-│ └── train.py
+│   ├── preprocess.py
+│   └── train.py
+│
+├── notebooks/
+│   └── EDA.ipynb
 │
 ├── models/
-│ └── model.joblib
+│   └── model.joblib
 │
+├── requirements.txt
 └── README.md
-
-
----
-
-## 🚀 FEATURES
-- Full EDA with graphs & data insights  
-- Automatic cleaning + encoding + scaling  
-- Feature engineering (ratios, interactions, log transform, bins, flags, etc.)  
-- Multiple scalers (Standard / MinMax / Robust / Power)  
-- Sklearn Pipeline + ColumnTransformer  
-- RandomForest baseline (accuracy: ~0.73–0.75)  
-- Model saved as `.joblib`
+```
 
 ---
 
-## 🔧 INSTALLATION
+# Machine Learning Workflow
 
+1. Load and clean dataset
+2. Handle missing values
+3. Feature engineering
+4. Train / test split
+5. Train machine learning model
+6. Evaluate performance
 
+---
+
+# Model
+
+Algorithm used:
+
+**Random Forest Classifier**
+
+Libraries:
+
+* Scikit-learn
+* Pandas
+* NumPy
+
+---
+
+# Model Performance
+
+Test results:
+
+Accuracy: **0.71**
+
+ROC-AUC: **0.78**
+
+Classification report:
+
+| Class       | Precision | Recall | F1-score |
+| ----------- | --------- | ------ | -------- |
+| Good Credit | 0.83      | 0.74   | 0.78     |
+| Bad Credit  | 0.52      | 0.65   | 0.58     |
+
+---
+
+# Tech Stack
+
+Python
+Pandas
+Scikit-learn
+Matplotlib
+Seaborn
+Jupyter Notebook
+
+---
+
+# How to Run
+
+Clone the repository:
+
+```
+git clone https://github.com/linhsand/german-credit-risk.git
+```
+
+Install dependencies:
+
+```
 pip install -r requirements.txt
+```
 
+Train the model:
 
----
-
-## 🧹 PREPROCESSING (IN preprocess.py)
-- Remove `Unnamed` index columns  
-- Convert numeric fields  
-- Generate new features  
-- Handle missing values  
-- Auto-detect numeric & categorical columns  
-- Apply OneHot + scaling via ColumnTransformer  
-
----
-
-## 🎯 TRAINING (train.py)
-
-
+```
 python src/train.py
+```
 
-Outputs:
-- Accuracy & classification report  
-- Saved model → `models/model.joblib`
+The trained model will be saved to:
 
----
-
-## 📊 EVALUATION
-You can evaluate inside the `EDA.ipynb` or create a separate evaluation script if needed.
-
----
-
-## 📦 MODEL EXPORT
-Model is saved automatically as:
-
-
+```
 models/model.joblib
-
-
----
-
-## 🌐 GITHUB USAGE
-To push this project:
-
-
-git init
-git add .
-git commit -m "Initial ML credit risk project"
-git branch -M main
-git remote add origin https://github.com/
-<your-username>/<repo-name>.git
-git push -u origin main
-
+```
 
 ---
 
-## 🏁 SUMMARY
-This project demonstrates a complete ML workflow:
-- Data exploration  
-- Cleaning & preprocessing  
-- Feature engineering  
-- ML pipeline training  
-- Model exporting  
-- Reproducible project structure
+# Future Improvements
+
+* Hyperparameter tuning
+* Model comparison (Logistic Regression, XGBoost)
+* Feature importance analysis
+* Deployment as API
+
+---
+
+# Author
+
+Cát Linh
